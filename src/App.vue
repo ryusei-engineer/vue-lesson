@@ -1,15 +1,15 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
-import { ref, computed } from 'vue'
-const score = ref(0)
-const ev = computed(()=>{
-  return score.value > 3 ? 'ok' : 'no'
+import { ref, watchEffect } from 'vue'
+const count = ref(0);
+watchEffect(()=>{
+  console.log(count.value);
 })
 </script>
 
 <template>
-<p>{{ ev }}</p>
-<button @click="score++">add</button>
+<p>{{ count }}</p>
+<button @click="count++">add</button>
 </template>
 
