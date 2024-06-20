@@ -6,7 +6,13 @@ const ok = ref(true)
 </script>
 
 <template>
-<p v-if="ok">test</p>
+<button @click="ok = !ok">反転</button>
+<template v-if="ok">
+  <p>true1</p>
+  <p>true2</p>
+</template>
+
+<p v-else="ok">false</p>
 </template>
 <style>
 </style>
