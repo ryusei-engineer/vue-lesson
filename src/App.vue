@@ -1,18 +1,13 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+import { ref } from 'vue'
+const ok = ref(true)
 </script>
 
 <template>
-<p :class="{red: true, border: false}">test</p>
+<p v-if="ok">test</p>
 </template>
 <style>
-.red{
-  color: red;
-}
-
-.border{
-  border: 1px solid black;
-}
 </style>
 
