@@ -2,17 +2,16 @@
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 import { ref } from 'vue'
-const ok = ref(true)
+const array = ref([
+  { id: 1, value: "A"},
+  { id: 2, value: "B"},
+  { id: 3, value: "C"}
+])
 </script>
 
 <template>
-<button @click="ok = !ok">反転</button>
-<template v-if="ok">
-  <p>true1</p>
-  <p>true2</p>
-</template>
-
-<p v-else="ok">false</p>
+<button @click="array.shift()"></button>
+<p v-for="char in array" :key="char.id"><input type="text">{{ char.value }}</p>
 </template>
 <style>
 </style>
